@@ -1,0 +1,8 @@
+title: "eggc のメモ帳"
+summary: "主に技術に関することを記録します"
+topics: []
+published: false
+price: 0
+chapters:
+  - emacs-memo
+  - working-memo
