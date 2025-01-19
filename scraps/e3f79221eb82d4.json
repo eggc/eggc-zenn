@@ -1,0 +1,18 @@
+{
+  "title": "MySQL のメモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2022-12-26",
+  "comments": [
+    {
+      "author": "eggc",
+      "created_at": "2022-12-26",
+      "body_markdown": "テーブル定義とインデックスの定義を確認する時は一般には下記のようにする。\n\n```\nDESC <table_name>;\nSHOW INDEX from <table_name>;\n```\n\nMySQLにはより便利な機能があって下記のようにすると\nテーブル定義とインデックス定義する SQL を出力できる。\n\n```sql\nSHOW CREATE TABLE <table_name>\\G;\n```\n\n\\G はヘッダーを表示しないための記号。"
+    },
+    {
+      "author": "eggc",
+      "created_at": "2023-02-08",
+      "body_markdown": "config が見つからないときは\n\n```\nmysql --help | grep \n```\n\nでだいたいありそうな場所を教えてくれる。\n\n> /etc/my.cnf /etc/mysql/my.cnf /opt/homebrew/etc/my.cnf ~/.my.cnf\n\n"
+    }
+  ]
+}

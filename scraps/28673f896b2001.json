@@ -1,0 +1,47 @@
+{
+  "title": "GitHub Copilot Chatメモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2025-01-16",
+  "comments": [
+    {
+      "author": "eggc",
+      "created_at": "2025-01-16",
+      "body_markdown": "Emacs パッケージ\n\nhttps://github.com/chep/copilot-chat.el\n\n"
+    },
+    {
+      "author": "eggc",
+      "created_at": "2025-01-16",
+      "body_markdown": "copilot のみの場合はコードの提案しかしないけど、copilot chat はもう少し対話的に AI と情報のやり取りができる。"
+    },
+    {
+      "author": "eggc",
+      "created_at": "2025-01-16",
+      "body_markdown": "## コミットメッセージの自動生成\n\n設定するだけで git commit の時に数秒遅れてコミットメッセージを作ってくれる。これは便利。\n\n```lisp\n(add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)\n```",
+      "body_updated_at": "2025-01-16"
+    },
+    {
+      "author": "eggc",
+      "created_at": "2025-01-16",
+      "body_markdown": "## コードを送信してアクション (code helper functions)\n\n範囲選択して `(copilot-chat-review)` みたいなコマンドを実行すると、コードレビューの結果を出力してくれる。色々バージョンがあって、テスト、ドキュメント、コード修正、コード解説などのコマンドがある。あまり精度が良いという感じはしなかった。ただ、大量のコードがあって不慣れな時とかには役に立ちそう。",
+      "body_updated_at": "2025-01-16"
+    },
+    {
+      "author": "eggc",
+      "created_at": "2025-01-16",
+      "body_markdown": "## チャットで質問 (basic function)\n\nコマンド `(copilot-chat-display)` でウィンドウを開き対話できる。ほぼ ChatGPT と同じ UX だが、質問内容はソフトウェアエンジニアリングに制限されていて、関係ない分野の質問は回答してもらえない。\n\nC-c C-c でメッセージ送信できる。",
+      "body_updated_at": "2025-01-16"
+    },
+    {
+      "author": "eggc",
+      "created_at": "2025-01-16",
+      "body_markdown": "ここの設定が参考になる\nhttps://mugijiru.github.io/.emacs.d/editing/copilot/"
+    },
+    {
+      "author": "eggc",
+      "created_at": "2025-01-16",
+      "body_markdown": "役に立った事例\n\n- csv のカラムの追加をしたときにテストの修正\n- OpenAPI の仕様書の作成",
+      "body_updated_at": "2025-01-16"
+    }
+  ]
+}
