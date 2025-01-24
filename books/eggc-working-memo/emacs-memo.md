@@ -24,6 +24,14 @@ OpenAI のライセンスとか購入して使ってみるのも悪くないと�
 
 https://github.com/karthink/gptel
 
+## uniteai
+
+Emacs から AI を呼び出すというのは同じ。
+確か LSP 実装なのでインターフェースがより統一感あるものになるかも。
+音声入力とかの機能がある。インストールまでの道のりが長そう。
+
+https://github.com/freckletonj/uniteai
+
 ## web-mode
 
 erb を編集するときに web-mode にしているが、ペーストしただけでファイル全体のオートインデントがかかってしまうのでこれをやめにしたい。方法は下記の記事の通りにすれば良さそう。
