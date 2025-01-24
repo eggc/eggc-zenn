@@ -6,6 +6,14 @@ title: "Emacs"
 
 Ruby のコードジャンプは dumb-jump で検索ジャンプしてるけど、同じファイルの中だとわかってる時は dumb-jump 使わずに imenu で探した方が早い。なので M-. は imenu で探した後見つからなかったら dumb-jump を使うみたいな、フォールバックで構成することはできないかなと思っている。
 
+## pr-preview
+
+Emacs から GitHub のプルリクエストにコメントを書き込むことができるらしい。
+
+https://github.com/blahgeek/emacs-pr-review
+
+このパッケージを知ったきっかけ： https://magnus.therning.org/2025-01-19-reviewing-github-prs-in-emacs.html
+
 ## web-mode
 
 erb を編集するときに web-mode にしているが、ペーストしただけでファイル全体のオートインデントがかかってしまうのでこれをやめにしたい。方法は下記の記事の通りにすれば良さそう。
