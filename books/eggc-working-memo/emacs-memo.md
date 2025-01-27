@@ -4,6 +4,8 @@ title: "Emacs"
 
 ## todo: 改善のアイデア
 
+### dumb-jump の改善
+
 Ruby のコードジャンプは dumb-jump で検索ジャンプしてるけど、同じファイルの中だとわかってる時は dumb-jump 使わずに imenu で探した方が早い。なので M-. は imenu で探した後見つからなかったら dumb-jump を使うみたいな、フォールバックで構成することはできないかなと思っている。
 
 ## pr-preview
