@@ -11,15 +11,15 @@ published_at: "2024-08-02 00:39"
 hugo_date: "2024-08-02T00:39:00+09:00"
 ---
 
-# はじめに
+## はじめに
 
 Ruby の language server といえば [Solargraph](https://solargraph.org/) でした。しかし、同僚の間では、あまり評判の良いものではありませんでした。私も数年前に少し触ったことがあるのですが、パフォーマンスが悪く、大型のプロジェクトでこれを使うと固まってしまうことが多かったように思います。これに代わる language server として [ruby-lsp](https://github.com/Shopify/ruby-lsp) が開発されました。これまでに多くの場面で Ruby に貢献してきた Shopify が積極的に開発しており期待の高いプロダクトです。Ruby3の型サポートや、 Rubocop とのインテグレーション機能を備えています。長らく使ってみたいと思っていたのですが Emacs のドキュメントがほとんどなく、インターネット上でも Visual Studio Code を使う前提の記事ばかりです。そこで、この記事では Emacs で ruby-lsp を使う方法をまとめ、その便利さを紹介してみたいと思います。
 
-# インストールと設定
+## インストールと設定
 
 はじめにインストールと設定方法を説明します。基本的には language server である ruby-lsp とそのクライアントを Emacs にインストールするだけです。
 
-## ruby-lsp のインストール
+### ruby-lsp のインストール
 
 基本的には `gem install ruby-lsp` によってインストールするだけです。プロジェクトに関わる全員が必要とするものではないので、Gemfile で管理する必要はないでしょう。インストールできたら `ruby-lsp` が実行できることを確認します。
 
@@ -49,7 +49,7 @@ https://2metz.fr/blog/configuring-emacs-eglot-lsp-with-docker-containers/
 
 :::
 
-## LSP クライアントのインストールと設定
+### LSP クライアントのインストールと設定
 
 Emacs での LSP クライアントは eglot と lsp-mode があります。eglot は Emacs 本体に同梱されており、機能もシンプルなので使いやすいのですが、私の環境だと ruby-lsp がうまく動作しなかったため lsp-mode を使用することにしました。
 
@@ -76,7 +76,7 @@ Emacs での LSP クライアントは eglot と lsp-mode があります。eglo
 
 うまく動作しない場合は `*ruby-lsp-ls::stderr*` のバッファを確認してみましょう。
 
-# コード診断(Diagnotics)と自動修正(Formatting)
+## コード診断(Diagnotics)と自動修正(Formatting)
 
 LSP はコード診断と自動修正の機能を提供します。ruby-lsp でもこれらの機能を使ってみましょう。ここでは Rubocop のデフォルトルールに違反した下記のサンプルコードを利用します。
 
@@ -107,7 +107,7 @@ end
 
 ![](https://storage.googleapis.com/zenn-user-upload/c346e84a0793-20240801.png)
 
-## lsp-format-buffer による修正
+### lsp-format-buffer による修正
 
 次は、これに自動修正を実行しましょう。 `M-x lsp-format-buffer` を実行します。下記のようになりました。ルール違反(4)の文字列リテラルが修正されたことがわかります。
 
@@ -119,7 +119,7 @@ Rubocop の自動修正はルール(2)(3)(4)に対して有効なはずですが
 
 https://github.com/Shopify/ruby-lsp/issues/704
 
-## code action による修正
+### code action による修正
 
 さて、lsp-format-buffer による一括自動修正では(3)を改善できませんでした。ここで LSP の機能 code action を使ってみましょう。問題のファイルを全範囲選択し、`M-x lsp-execute-code-action` を実行します。code action の一覧が表示されました。この中に `Autocorrect Lint/UselessAssignment` が含まれていることがわかります。
 
@@ -127,6 +127,6 @@ https://github.com/Shopify/ruby-lsp/issues/704
 
 選択して実行しましょう。自動的に不要な変数が削除されました。このように、一括修正できない場合は範囲選択して一つずつ自動修正していくことができます。その他の code action としては `Refactor: Extract Variable` や `Refactor: Extract Method` といった機能があります。これらはルール違反の修正ではありませんが、リファクタリングの作業の一部を自動化してくれるでしょう。
 
-# 終わりに
+## 終わりに
 
 この記事では ruby-lsp のインストール方法と、コード診断、自動修正について説明しました。まだ私も試せてない機能として定義ジャンプ、ドキュメント、コード補完の機能があります。Rails のサポートもあるようです。これらについても便利だと感じた部分があれば後日まとめてみたいと思います。
