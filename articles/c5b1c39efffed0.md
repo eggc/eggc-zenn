@@ -4,6 +4,8 @@ emoji: "📚"
 type: "tech"
 topics: []
 published: false
+hugo_draft: true
+hugo_date: "2022-05-16T00:01:00+09:00"
 ---
 
 # 見積もりの難しさと改善案

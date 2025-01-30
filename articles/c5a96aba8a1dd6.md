@@ -7,6 +7,7 @@ topics:
 published: true
 published_at: "2024-05-16 00:01"
 publication_name: "moneyforward"
+hugo_date: "2024-05-16T00:01:00+09:00"
 ---
 
 # はじめに
