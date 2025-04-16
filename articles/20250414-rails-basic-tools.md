@@ -107,6 +107,26 @@ Customer.last.do_something
 
 注意: `binding.pry` は便利ですが最新のローダー(zeitwerk)では正しく動作しません。最新のローダーを使う場合は `binding.irb` を使いましょう。操作方法はほとんど同じです。
 
+### rails routes
+
+大量のコントローラがあるとルーティングが複雑になり、コードから読み取るのが難解な場合があります。そのような場合はルーティング出力コマンドを利用しましょう。routes.rb を想定した通りに記述できているのか確認するのにも使えます。
+
+```
+bin/rails routes
+
+# this/path/has/something/wrong が含まれる行を出力
+# パスがわかっているが対応するコントローラがどれかよくわからない時に便利
+bin/rails routes --grep this/path/has/something/wrong
+
+# コントローラを指定して出力
+# 作ったコントローラが正しくルーティングされてるかを確認したり、コントローラが使われてないことを確認するのに便利
+bin/rails routes --controller SomethingController
+
+# 縦長に出力
+# パスやコントローラが長くなると読みにくくなるので、上記の検索で見辛かった時に組み合わせて使うと便利
+bin/rails routes --expanded
+```
+
 ## テスト(RSpec) のデバッグ
 
 テスト実行時も binding.pry などのデバッグツールは利用できます。ここでは、テストコマンド rspec についての細かいオプションを紹介します。
